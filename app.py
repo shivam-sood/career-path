@@ -3,6 +3,8 @@ from dataclasses import dataclass
 from flask_sqlalchemy import SQLAlchemy
 import os
 from flask_migrate import Migrate, migrate
+import sys
+sys.path = sorted(sys.path, key=lambda x: 'site-packages' in x)
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
