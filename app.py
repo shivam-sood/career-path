@@ -3,7 +3,6 @@ from dataclasses import dataclass
 from flask_sqlalchemy import SQLAlchemy
 import os
 from flask_migrate import Migrate, migrate
-import json
 
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -453,5 +452,5 @@ def view_approved():
         return keys
     return render_template('view_approved.html')
 if __name__ == '__main__':
-    app.run(debug=True, port=8001)
+    app.run(debug=True)
 
