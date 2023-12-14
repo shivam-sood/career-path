@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='approve.css') }}"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="{{ url_for('static', filename='get_story.js') }}"></script>
+    <script> var username = '{{username}}'</script>
+    <title>Career Path</title>
+  </head>
+  <body>
+        <nav>
+      <div class="container">
+
+        <a href="https://www.iiit.ac.in/">
+        <div class="tile_img">
+          
+            <img
+              src="{{ url_for('static', filename='iiit.png') }}"
+              width="100%"
+              height="100%"
+              style="object-fit: cover; border-radius: 2%"
+          />
+        
+        </div>
+        </a>
+        <a href="{{ url_for('index') }}"><div class="tile">Home</div></a>
+
+        <a href="{{ url_for('forms') }}"><div class="tile">Forms</div></a>
+        <a onclick="localStorage.clear()" href="{{ url_for('index') }}"
+              ><div class="tile">Logout</div></a>
+        <!-- <div class="tile"></div> -->
+      </div>
+    </nav>
+
+
+    <table id="table">
+        <tr>
+            <td>Username</td>
+            <td>timeline</td>
+            <td>stage_name</td>
+            <td>Description</td>
+        </tr>
+    </table>
+
+    
+  </body>
+</html>

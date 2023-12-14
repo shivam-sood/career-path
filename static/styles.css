@@ -1,0 +1,313 @@
+/* * {
+    padding: 0 0;
+    margin: 0 0;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.full-width-div {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("image1.jpg");
+    background-repeat: center center no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: left;
+    /* top: -10vh; */
+    /* padding: 20px; */
+}
+
+
+
+.full-width-div-3 {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("up.webp");
+    background-repeat: center center no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    text-align: left;
+    /* top: -10vh; */
+    /* padding: 20px; */
+}
+
+.full-width-div-empty {
+    width: 100%;
+    height: 60vh;
+
+    /* background-attachment: fixed; Fixed background */
+    color: #fff;
+    text-align: left;
+    /* top: -10vh; */
+    /* padding: 20px; */
+}
+
+.content {
+    width: 70vw;
+    height: 50vh;
+    /* Limit content width for better readability */
+
+    /* margin: 0 auto; Center content within the full-width div */
+    /* Set padding to center text within div vertically */
+    box-sizing: border-box;
+    padding: 40vh 0 0 0;
+    padding-left: 10vw;
+    color: black;
+
+    float: left;
+}
+
+.content h1 {
+    font-size: 4vw;
+    font-family: Cardo;
+}
+
+.content p {
+    margin-top: 5vh;
+    font-size: 2vw;
+    font-family: Lato;
+}
+
+.content a {
+    /* margin-top: 200px; */
+    /* font-size: 2vw; */
+    font-family: Lato;
+
+    display: inline-block;
+}
+
+.content-new {
+    width: 50vw;
+    height: 50vh;
+    /* Limit content width for better readability */
+
+    /* margin: 0 auto; Center content within the full-width div */
+    /* Set padding to center text within div vertically */
+    box-sizing: border-box;
+    padding: 15vh 0 0 0;
+    padding-left: 10vw;
+    color: black;
+
+    float: left;
+}
+
+.content-new h1 {
+    font-size: 4vw;
+    font-family: Cardo;
+}
+
+.content-new p {
+    margin-top: 5vh;
+    font-size: 2vw;
+    font-family: Lato;
+}
+
+nav {
+    background-color: white;
+    box-shadow: 5px 5px 5px #888888;
+    color: #fff;
+    top: 0px;
+    width: 100%;
+    position: fixed;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    box-sizing: border-box;
+    /* padding: 10px 0; */
+}
+
+.container {
+    /* max-width: 1200px; */
+    /* display: inline-block; */
+    /* margin: 0 auto; */
+    /* padding: 20px; */
+    font-size: 0;
+
+    position: relative;
+    height: 7vh;
+}
+
+.tile {
+    box-sizing: border-box;
+    background-color: white;
+    width: 20%;
+    /* width: max-content; */
+    /* padding: 30px; */
+    height: 7vh;
+    color: black;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tile_img {
+    box-sizing: border-box;
+    background-color: white;
+    width: 20%;
+    /* width: max-content; */
+    /* padding: 30px; */
+    height: 7vh;
+    color: black;
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: top;
+    /* padding-top: 25px; */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tile:hover {
+    background-color: #cdcdcd;
+}
+
+.form {
+    box-sizing: border-box;
+    float: right;
+    /* background-image:  url("path.jpg");
+    background-repeat: center center no-repeat;
+    background-position: 60% 40%; */
+    /* background-attachment: fixed; */
+    border-radius: 50px;
+    margin-top: 10vh;
+    margin-right: 5vw;
+    /* text-align: center; */
+    padding: 5vh 0 0 0;
+    width: 40vw;
+    height: 40vh;
+    /* padding-bottom: 60vh; */
+    /* margin */
+}
+
+.form2 {
+    box-sizing: border-box;
+    float: right;
+
+
+    margin-top: 10vh;
+    margin-right: 5vw;
+    /* text-align: center; */
+    padding: 5vh 0 0 0;
+    width: 40vw;
+    height: 40vh;
+    /* padding-bottom: 60vh; */
+    /* margin */
+
+}
+
+.form3 {
+    display: flex;
+}
+
+/* h1, h2, h3 {
+    color: #007bff;
+} */
+
+/* ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+} */
+
+ul li {
+    font-size: medium;
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 10vh;
+    /* margin-bottom: 5px; */
+    vertical-align: middle;
+}
+
+.action-button {
+    max-width: max-content;
+    background: green;
+    font-weight: bold;
+    color: white;
+    /* border: 0 none; */
+    border-radius: 1000px;
+    /* cursor: pointer; */
+    padding: 15px;
+    /* margin: 30px 5px; */
+    margin-top: 5vh;
+    text-decoration: none;
+    font-size: 14px;
+    /* margin-top: 200px; */
+}
+
+.action-button:hover {
+    background: darkgreen;
+}
+
+a {
+    text-decoration: none;
+    /* color: #007bff; */
+}
+
+a:hover {
+    /* text-decoration: underline; */
+}
+
+/* form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+} */
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 8px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.box {
+    /* margin-bottom: 100px;
+    padding-bottom: 5px; */
+    padding-left: 10vh;
+    padding-right: 10vh;
+    line-height: 50px;
+}
+
+.box a {
+    font-size: 20px;
+    color: blue;
+    padding-bottom: 5px;
+}
+
+.box:hover {
+    background-color: #cdcdcd;
+}
+
+
+.full-width-div-two {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("admin.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: left;
+    /* top: -10vh; */
+    /* padding: 20px; */
+}
