@@ -4,7 +4,7 @@ var animating = false;
 console.log("login.js");
 $(document).ready(function () {
   
-  $(".submit").click(function () {
+  $("#login").click(function () {
     $.ajax({
       type: "POST",
       url: "/login_attempt",
