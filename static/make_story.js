@@ -15,7 +15,20 @@ $(document).ready(function () {
 
         window.location.href = "/forms";
     });
-    $("#add_row").click(function () {
+  $("#add_row").click(function () {
+      if ($("#timeline").val() == "") {
+          alert("Timeline cannot be empty!");
+        return false;
+    }
+    if ($("#stage_name").val() == "") {
+      alert("Stage name cannot be empty!");
+      return false;
+    }
+    if ($("#description").val() == "") {
+      alert("Description cannot be empty!");
+
+      return false;
+    }
         $.ajax({
           type: "POST",
           url: "/make_story/" + username,
@@ -30,7 +43,7 @@ $(document).ready(function () {
             <td>`+$('#timeline').val()+`</td>
             <td>`+$("#stage_name").val()+`</td>
             <td>`+$("#description").val()+`</td>
-            <td><button class="btn btn-primary" id="add_row"></button></td>
+            <td></td>
         </tr>`;
                 
                 $("#table").append(tr);

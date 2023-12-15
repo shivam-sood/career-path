@@ -23,20 +23,17 @@
     <title>Career Path</title>
   </head>
   <body>
-        <nav>
+    <nav>
       <div class="container">
-
         <a href="https://www.iiit.ac.in/">
-        <div class="tile_img">
-          
+          <div class="tile_img">
             <img
               src="{{ url_for('static', filename='iiit.png') }}"
               width="100%"
               height="100%"
-              style="object-fit: cover; border-radius: 2%"
-          />
-        
-        </div>
+              style="object-fit: contain; border-radius: 2%"
+            />
+          </div>
         </a>
         <a href="{{ url_for('index') }}"><div class="tile">Home</div></a>
 
@@ -47,23 +44,33 @@
     </nav>
 
     <form id="msform">
-      <fieldset style="height: 70vh;">
+      <fieldset style="height: 75vh">
         <h2 class="fs-title">Apply for a position</h2>
-        <h2 class="fs-subtitle">Also give us reasons you are suitable for the role</h2>
+        <h2 class="fs-subtitle">
+          Also give us reasons you are suitable for the role
+        </h2>
         <input type="text" name="username" placeholder="Username" />
+        <input type="text" name="email" placeholder="Email" />
         <input type="password" name="password" placeholder="Password" />
         <input type="text" name="name" placeholder="Name" />
-        <textarea name="reason" placeholder="Reasons you are suitable for the role"></textarea>
-        <div style="display: flex;">
-            <input type="radio" id = "admin" name="role" value="Admin" checked>
-        <label style="margin-top: 15px;" for="admin">Admin</label><br>
-        <input type="radio" id = "collector" name="role" value="Collector">
-        <label style="margin-top: 15px;" for="collector">Collector</label><br>
-        <input type="radio" id = "moderator" name="role" value="Moderator">
-        <label style="margin-top: 15px;" for="moderator">Moderator</label><br>
+        <textarea
+          name="reason"
+          placeholder="Reasons you are suitable for the role"
+        ></textarea>
+        <div style="display: flex">
+          <input type="radio" id="admin" name="role" value="Admin" checked />
+          <label style="margin-top: 15px" for="admin">Admin</label><br />
+          <input type="radio" id="collector" name="role" value="Collector" />
+          <label style="margin-top: 15px" for="collector">Collector</label
+          ><br />
+          <input type="radio" id="moderator" name="role" value="Moderator" />
+          <label style="margin-top: 15px; margin-right: 5vw;" for="moderator">Moderator</label
+          ><br />
         </div>
-        
-        <a class="submit action-button" target="_top" style="margin: 7vh;">Apply</a>
+
+        <a class="submit action-button" target="_top" style="margin: 7vh"
+          >Apply</a
+        >
       </fieldset>
     </form>
   </body>

@@ -23,20 +23,17 @@
     <title>Career Path</title>
   </head>
   <body>
-        <nav>
+    <nav>
       <div class="container">
-
         <a href="https://www.iiit.ac.in/">
-        <div class="tile_img">
-          
+          <div class="tile_img">
             <img
               src="{{ url_for('static', filename='iiit.png') }}"
               width="100%"
               height="100%"
-              style="object-fit: cover; border-radius: 2%"
-          />
-        
-        </div>
+              style="object-fit: contain; border-radius: 2%"
+            />
+          </div>
         </a>
         <a href="{{ url_for('index') }}"><div class="tile">Home</div></a>
 
@@ -49,11 +46,20 @@
     <form id="msform">
       <fieldset>
         <h2 class="fs-title">Login to your account</h2>
-        <h2 class="fs-subtitle">Login using the details used during registration</h2>
+        <h2 class="fs-subtitle">
+          Login using the details used during registration
+        </h2>
         <input type="text" name="username" placeholder="Username" />
         <input type="password" name="password" placeholder="Password" />
-        <a class="submit action-button" href="{{url_for('register')}}" style="margin: 7vh;">Register</a>
-        <a class="submit action-button" target="_top" style="margin: 7vh;">Login</a>
+        <a
+          class="submit action-button"
+          href="{{url_for('register')}}"
+          style="margin: 7vh"
+          >Register</a
+        >
+        <a class="submit action-button" target="_top" style="margin: 7vh"
+          >Login</a
+        >
       </fieldset>
     </form>
   </body>

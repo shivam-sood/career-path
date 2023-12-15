@@ -8,7 +8,14 @@ $(document).ready(function () {
         if ($("[name='pass']").val() != $("[name='cpass']").val()) {
             alert("Passwords do not match!");
             return false;
-        }
+      }
+      if ($("[name='pass']").val() == "") {
+        alert("Password cannot be empty!");
+        return false;
+      }
+      
+
+
       if (animating) return false;
       animating = true;
 
@@ -38,7 +45,40 @@ $(document).ready(function () {
         }
       );
     });
-    $(".submit").click(function () {
+  $(".submit").click(function () {
+      if ($("[name='username']").val() == "") {
+        alert("Username cannot be empty!");
+        return false;
+      }
+
+      if ($("[name='name']").val() == "") {
+        alert("Name cannot be empty!");
+        return false;
+      }
+      if ($("[name='phone']").val() == "") {
+        alert("Phone number cannot be empty!");
+        return false;
+      }
+      if ($("[name='dob']").val() == "") {
+        alert("Date of birth cannot be empty!");
+        return false;
+      }
+      if ($("[name='address']").val() == "") {
+        alert("Address cannot be empty!");
+        return false;
+      }
+      if ($("[name='highest_edu']").val() == "") {
+        alert("Highest qualification cannot be empty!");
+        return false;
+      }
+      if ($("[name='status']").val() == "") {
+        alert("Current status cannot be empty!");
+        return false;
+      }
+      if ($("[name='current_location']").val() == "") {
+        alert("Current location cannot be empty!");
+        return false;
+      }
         $.ajax({
             type: "POST",
             url: "/register/seeker",
