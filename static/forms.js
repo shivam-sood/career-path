@@ -10,8 +10,14 @@ $(document).ready(function () {
     window.location.href = "/";
   }
   var i = 0;
-    $("#add_row").click(function () {
-        window.location.href = "/make_story/" + prompt("Enter username");
+  $("#add_row").click(function () {
+    var prmpt = prompt("Enter username");
+    if (prmpt == "")
+    {
+      alert("Please enter a username");
+      return false;
+      }
+        window.location.href = "/make_story/" + prmpt;
 
     });
     $.ajax({
@@ -24,16 +30,28 @@ $(document).ready(function () {
         success: function (datas) {
             // console.log(stati);
             data = datas[0];
-            stati = datas[1];
+          stati = datas[1];
+          reason_if_rejected = datas[2];
+          for (var i = 0; i < reason_if_rejected.length; i++)
+          {
+            if (stati[i] == "Rejected")
+              reason_if_rejected[i] = "Reason: " + reason_if_rejected[i];
+            }
             for (var i = 0; i < data.length; i++) {
                 var row = `<tr>
                 <td>${data[i]}</td>
                 <td><button class="show_story" val='${data[i]}' name='${data[i]}'>View their story</button></td>
                 <td><button class="send_approval" val='${data[i]}' name='${data[i]}'>Send for Approval</td>
                 <td>${stati[i]}</td>
-                <td></td>
+                <td>${reason_if_rejected[i]}</td>
                 </tr>`;
-                $("#table_head").append(row);
+              $("#table_head").append(row);
+              if (stati[i] != "Not sent")
+              {
+                console.log(data[i] + " disabled", stati[i]);
+                $("[name='" + data[i] + "']").attr("disabled", true);
+                $("[name='" + data[i] + "']"+".send_approval").css("background-color", "grey");
+                }
                 
             }
             
@@ -55,7 +73,11 @@ $(document).ready(function () {
                 if ($(this).closest("td").next().text() == "Sent") {
                   alert("Already sent");
                   return false;
-                }
+              }
+              if ($(this).closest("td").next().text() == "Rejected") {
+                alert("Already rejected");
+                return false;
+            }
                 $.ajax({
                     type: "POST",
                     url: "/send_approval/" + $(this)[0].name,

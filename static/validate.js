@@ -56,11 +56,18 @@ $(document).ready(function () {
               console.log("reject");
               x = $(this)[0].name;
               console.log($(this)[0].name);
+              reason = prompt("Reason for rejection");
+              if (reason == "")
+              {
+                alert("Please enter a reason");
+                return false;
+              }
               $.ajax({
                 type: "POST",
                 url: "/finally_reject",
                 data: {
                   username: x,
+                  reason_if_rejected: reason,
                 },
                 success: function (data) {
                   location.reload();

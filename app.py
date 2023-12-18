@@ -76,13 +76,14 @@ class Career_path(db.Model):
     stage_name: str
     stage_description: str
     status: str
+    reason_if_rejected: str
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=False)
     time_line = db.Column(db.String(), unique=False)
     stage_name = db.Column(db.String(), unique=False)
     stage_description = db.Column(db.String(), unique=False)
     status = db.Column(db.String(), unique=False)
-    
+    reason_if_rejected = db.Column(db.String(), unique=False)
 class Career_form(db.Model):
     
     id = db.Column(db.Integer, primary_key=True)
@@ -310,6 +311,7 @@ def reject_data():
             return "Error"
         return redirect(url_for('login'))
     return render_template('approve.html')
+
 @app.route('/approve_data', methods=['GET', 'POST'])
 def approve_data():
     if request.method == 'POST':
@@ -347,7 +349,7 @@ def make_story(username):
         time_line = request.form.get('timeline')
         stage_name = request.form.get('stage_name')
         stage_description = request.form.get('stage_description')
-        career_path = Career_path(username=username, time_line=time_line, stage_name=stage_name, stage_description=stage_description, status="Not sent")
+        career_path = Career_path(username=username, time_line=time_line, stage_name=stage_name, stage_description=stage_description, status="Not sent", reason_if_rejected=" ")
         print(username, time_line, stage_name, stage_description)
         try: 
             db.session.add(career_path)
@@ -360,6 +362,23 @@ def make_story(username):
         return redirect(url_for('login'))
     return render_template('make_story.html', username=username)
 
+@app.route('/make_form/<username>', methods=['GET', 'POST'])
+def make_form(username):
+    if request.method == 'POST':
+        username = request.form.get('username')
+        career_form = Career_form(username=username, stage_number=request.form.get('stage_number'), grades=request.form.get('grades'), Duration=request.form.get('Duration'), Income_source=request.form.get('Income_source'), Annual_income=request.form.get('Annual_income'), Family=request.form.get('Family'), guidance_source=request.form.get('guidance_source'), insights=request.form.get('insights'), next_stage=request.form.get('next_stage'), suggestion=request.form.get('suggestion'))
+        # print(username, time_line, stage_name, stage_description)
+        try: 
+            db.session.add(career_form)
+            db.session.commit()
+            return "Success"
+        except:
+            db.session.rollback()
+            print("Error")
+            return "Error"
+        return redirect(url_for('login'))
+    return render_template('make_form.html', username=username)
+
 @app.route('/get_stories', methods=['GET', 'POST'])
 def get_stories():
     if request.method == 'POST':
@@ -371,8 +390,9 @@ def get_stories():
         # find rows with given username
         # print(Career_path.query.filter_by(username=keys[0]).first().status)
         stati = [Career_path.query.filter_by(username=i).first().status for i in keys]
+        reason_if_rejected = [Career_path.query.filter_by(username=i).first().reason_if_rejected for i in keys]
         print(keys, stati)
-        return [keys, stati]
+        return [keys, stati, reason_if_rejected]
     return render_template('get_stories.html')
 @app.route('/get_sent_stories', methods=['GET', 'POST'])
 def get_sent_stories():
@@ -435,7 +455,9 @@ def finally_approve():
 def finally_reject():
     if request.method == 'POST':
         username = request.form.get('username')
-        Career_path.query.filter_by(username=username).delete()
+        # Career_path.query.filter_by(username=username).delete()
+        Career_path.query.filter_by(username=username).update(dict(status="Rejected"));
+        Career_path.query.filter_by(username=username).update(dict(reason_if_rejected=request.form.get('reason_if_rejected')));
         try: 
             db.session.commit()
             return "Success"
