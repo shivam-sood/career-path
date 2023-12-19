@@ -57,7 +57,7 @@ $(document).ready(function () {
               x = $(this)[0].name;
               console.log($(this)[0].name);
               reason = prompt("Reason for rejection");
-              if (reason == "")
+              if (reason == "" || reason == null)
               {
                 alert("Please enter a reason");
                 return false;

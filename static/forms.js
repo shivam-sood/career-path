@@ -12,7 +12,7 @@ $(document).ready(function () {
   var i = 0;
   $("#add_row").click(function () {
     var prmpt = prompt("Enter username");
-    if (prmpt == "")
+    if (prmpt == "" || prmpt == null)
     {
       alert("Please enter a username");
       return false;

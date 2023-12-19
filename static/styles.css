@@ -8,6 +8,14 @@ body {
     background-color: #f4f4f4;
 }
 
+.fade {
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+
+    /* position: sticky; */
+}
+
 .full-width-div {
     width: 100%;
     height: 100vh;
@@ -17,6 +25,7 @@ body {
     background-attachment: fixed;
     color: #fff;
     text-align: left;
+    box-shadow: 0 -2px 15px 0px rgba(0, 0, 0, 0.4);
     /* top: -10vh; */
     /* padding: 20px; */
 }
@@ -34,6 +43,7 @@ body {
     text-align: left;
     /* top: -10vh; */
     /* padding: 20px; */
+    box-shadow: 0 -2px 15px 0px rgba(0, 0, 0, 0.4);
 }
 
 .full-width-div-empty {
@@ -45,9 +55,11 @@ body {
     text-align: left;
     /* top: -10vh; */
     /* padding: 20px; */
+    box-shadow: 0 -2px 15px 0px rgba(0, 0, 0, 0.4);
 }
 
 .content {
+
     width: 70vw;
     height: 50vh;
     /* Limit content width for better readability */
@@ -128,24 +140,29 @@ nav {
     font-size: 0;
 
     position: relative;
-    height: 7vh;
+    height: 5vh;
 }
 
 .tile {
     box-sizing: border-box;
     background-color: white;
+    /* background-clip: content-box; */
     width: 20%;
     /* width: max-content; */
     /* padding: 30px; */
-    height: 7vh;
+    height: 5vh;
     color: black;
     display: inline-block;
     font-size: 20px;
     text-align: center;
     vertical-align: top;
-    padding-top: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     margin-left: 10px;
     margin-right: 10px;
+    border-radius: 10px;
+
+    transition: all 0.5s ease;
 }
 
 .tile_img {
@@ -154,7 +171,7 @@ nav {
     width: 20%;
     /* width: max-content; */
     /* padding: 30px; */
-    height: 7vh;
+    height: 5vh;
     color: black;
     display: inline-block;
     font-size: 20px;
@@ -166,7 +183,8 @@ nav {
 }
 
 .tile:hover {
-    background-color: #cdcdcd;
+    background-color: #8964BF;
+    color: white;
 }
 
 .form {
@@ -188,6 +206,7 @@ nav {
 }
 
 .form2 {
+
     box-sizing: border-box;
     float: right;
 
@@ -240,6 +259,20 @@ ul li {
     text-decoration: none;
     font-size: 14px;
     /* margin-top: 200px; */
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.loader {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40vh;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 1000;
 }
 
 .action-button:hover {
@@ -310,4 +343,11 @@ button {
     text-align: left;
     /* top: -10vh; */
     /* padding: 20px; */
+    box-shadow: 0 -2px 15px 0px rgba(0, 0, 0, 0.4);
+}
+
+.inView {
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+
 }

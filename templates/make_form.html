@@ -47,23 +47,54 @@
         <!-- <div class="tile"></div> -->
       </div>
     </nav>
+    <div class="loader loader--style3" title="2">
+      <svg
+        version="1.1"
+        id="loader-1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="160px"
+        height="160px"
+        viewBox="0 0 50 50"
+        style="enable-background: new 0 0 50 50"
+        xml:space="preserve"
+      >
+        <path
+          fill="#000"
+          d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+        >
+          <animateTransform
+            attributeType="xml"
+            attributeName="transform"
+            type="rotate"
+            from="0 25 25"
+            to="360 25 25"
+            dur="0.6s"
+            repeatCount="indefinite"
+          />
+        </path>
+      </svg>
+      <script src="{{ url_for('static', filename='general.js') }}"></script>
+    </div>
 
     <table id="table">
       <thead>
-      <tr>
-        <!-- <td>Username</td> -->
-        <td>Stage Number</td>
-        <td>Grades</td>
-        <td>Duration</td>
-        <td>Income Source</td>
-        <td>Annual income</td>
-        <td> Family</td>
-        <td>Guidance Source</td>
-        <td>Insights</td>
-        <td>Next Stage</td>
-        <td> Suggestions</td>
-        <td>Add new stage</td>
-      </tr>
+        <tr>
+          <!-- <td>Username</td> -->
+          <td>Stage Number</td>
+          <td>Grades</td>
+          <td>Duration</td>
+          <td>Income Source</td>
+          <td>Annual income</td>
+          <td>Family</td>
+          <td>Guidance Source</td>
+          <td>Insights</td>
+          <td>Next Stage</td>
+          <td>Suggestions</td>
+          <td>Add new stage</td>
+        </tr>
       </thead>
       <tr>
         <!-- <td><input type="text" id="username" name="username" /></td> -->
@@ -73,7 +104,9 @@
         <td><input type="text" id="Income_source" name="Income_source" /></td>
         <td><input type="text" id="Annual_income" name="Annual_income" /></td>
         <td><input type="text" id="Family" name="Family" /></td>
-        <td><input type="text" id="guidance_source" name="guidance_source" /></td>
+        <td>
+          <input type="text" id="guidance_source" name="guidance_source" />
+        </td>
         <td><input type="text" id="insights" name="insights" /></td>
         <td><input type="text" id="next_stage" name="next_stage" /></td>
         <td><input type="text" id="suggestion" name="suggestion" /></td>
@@ -82,10 +115,11 @@
         </td>
       </tr>
     </table>
-    <div style="width: 100vw;text-align: center;margin-top: 5vh;">
-      <button class="btn btn-primary" id="submit" >Submit</button>
-      <a href="javascript:void(0);" onclick="location.reload()"><button class="btn btn-primary" id="submit" >Clear</button></a>
+    <div style="width: 100vw; text-align: center; margin-top: 5vh">
+      <button class="btn btn-primary" id="submit">Submit</button>
+      <a href="javascript:void(0);" onclick="location.reload()"
+        ><button class="btn btn-primary" id="submit">Clear</button></a
+      >
     </div>
-    
   </body>
 </html>

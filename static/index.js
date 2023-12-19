@@ -4,7 +4,7 @@ $(document).ready(function () {
   if (localStorage.getItem("username")) {
     window.location.href = "/dashboard/" + localStorage.getItem("role").toLowerCase();
   }
-
+  
   $("[name='gform_submit']").click(function () {
     $("[name='gform_name']").val("")
     $("[name='gform_email']").val("")
